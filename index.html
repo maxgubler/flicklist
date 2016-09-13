@@ -46,13 +46,13 @@
     // TODO 8
     // fill in the missing pieces of the code below
 
-    $("input[name='searchInput']").submit(function(evt) {
+    $("input[name='search']").submit(function(evt) {
 
       // first, we cancel the default action (which would leave the page)
       evt.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("input[name='searchInput']").val();
+      var searchTerm = $("input[name='search']").val();
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
