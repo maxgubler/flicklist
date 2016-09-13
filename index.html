@@ -31,8 +31,9 @@
       TODO 6
       add a <form> here for users to search for movies by title 
       -->
-      <form>
-        <input name="searchInput"></input>
+      <form id="form-search">
+        <input name="searchInput" type="text"></input>
+        <input type="submit" value="Search By Title"></input>
       </form>
 
     </header>
@@ -46,17 +47,17 @@
     // TODO 8
     // fill in the missing pieces of the code below
 
-    $("input[name='search']").submit(function(evt) {
+    $("#form-search").submit(function(evt) {
 
       // first, we cancel the default action (which would leave the page)
       evt.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("input[name='search']").val();
+      var searchTerm = $("input[name='searchInput']").val();
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
-      searchMovies(searchTerm, callback);
+      searchMovies(searchTerm, render);
     });
   </script>
 
