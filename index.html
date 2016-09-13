@@ -98,6 +98,8 @@
       var query = $("#form-search input[name=query]").val();
       searchMovies(query, render);
     });
+    
+    $("#add-to-watchlist").click(addActiveMovieToWatchlist);
 
     $("#browse-carousel").on("slid.bs.carousel", function() {
       console.log("the carousel just slid!");

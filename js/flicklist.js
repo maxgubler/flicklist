@@ -76,6 +76,12 @@ function searchMovies(query, callback) {
   });
 }
 
+function addActiveMovieToWatchlist() {
+  var activeMovie = model.browseItems[model.activeMovieIndex];
+  model.watchlistItems.push(activeMovie);
+  render();
+}
+
 
 
 /**
@@ -133,13 +139,8 @@ function render() {
     var title = $("<h4></h4>").text(activeMovie.original_title);
     var overview = $("<p></p>").text(activeMovie.overview);
     $('#browse-info').append([title, '<hr/>', overview]);
-    
     $('#add-to-watchlist').text("Add to Watchlist")
-    .attr("class", "btn btn-primary")
-    .click(function() {
-      model.watchlistItems.push(model.browseItems[model.activeMovieIndex]);
-      render();
-    }).prop("disabled", model.watchlistItems.indexOf(activeMovie) !== -1);
+    .attr("class", "btn btn-primary");
   }
   
     
@@ -159,6 +160,9 @@ function render() {
   
   // set poster as active
   posters[model.activeMovieIndex].addClass("item active");
+  
+  $("#add-to-watchlist")
+      .prop("disabled", model.watchlistItems.indexOf(activeMovie) !== -1);
 
 }
 
