@@ -1,12 +1,7 @@
-
-
-
-
 .jumbotron {
 	text-align: center;
 	margin-bottom: 1%;
 }
-
 
 #section-watchlist li {
 	padding: 0px;
@@ -14,20 +9,23 @@
 	width: 140px;
 }
 
-
 #section-watchlist li button {
 	width: 100%;
 	margin-top: 10px;
 }
 
-
 #section-watchlist ul {
 	text-align: center;
 }
 
-
 .main-content {
 	color: gray;
+}
+
+.well {
+    background: #114471 none repeat scroll 0 0;
+    border-width: 0;
+    color: white;
 }
 
 #section-browse {
