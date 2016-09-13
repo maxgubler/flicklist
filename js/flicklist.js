@@ -2,10 +2,11 @@
 
 var model = {
   watchlistItems: [],
-  browseItems: []
+  browseItems: [],
 
   // TODO 
   // add a property for the current active movie index
+  activeMovieIndex: 0
 }
 
 
@@ -76,6 +77,7 @@ function searchMovies(query, callback) {
 }
 
 
+
 /**
  * re-renders the page with new content, based on the current state of the model
  */
@@ -84,6 +86,8 @@ function render() {
   // clear everything
   $("#section-watchlist ul").empty();
   $("#section-browse ul").empty();
+  $("#browse-info").empty();
+  
 
   // render watchlist items
   model.watchlistItems.forEach(function(movie) {
@@ -122,28 +126,40 @@ function render() {
     $("#section-watchlist ul").append(itemView);
   });
 
+
   // render browse items
-  model.browseItems.forEach(function(movie) {
-    var title = $("<h4></h4>").text(movie.original_title);
-    var overview = $("<p></p>").text(movie.overview);
-
-    // button for adding to watchlist
-    var button = $("<button></button>")
-      .text("Add to Watchlist")
-      .attr("class", "btn btn-primary")
-      .click(function() {
-        model.watchlistItems.push(movie);
-        render();
-      })
-      .prop("disabled", model.watchlistItems.indexOf(movie) !== -1);
-
-    var itemView = $("<li></li>")
-      .attr("class", "list-group-item")
-      .append( [title, overview, button] );
-      
-    // append the itemView to the list
-    $("#section-browse ul").append(itemView);
+  var activeMovie = model.browseItems[model.activeMovieIndex];
+  if (activeMovie){
+    var title = $("<h4></h4>").text(activeMovie.original_title);
+    var overview = $("<p></p>").text(activeMovie.overview);
+    $('#browse-info').append([title, '<hr/>', overview]);
+    
+    $('#add-to-watchlist').text("Add to Watchlist")
+    .attr("class", "btn btn-primary")
+    .click(function() {
+      model.watchlistItems.push(model.browseItems[model.activeMovieIndex]);
+      render();
+    }).prop("disabled", model.watchlistItems.indexOf(activeMovie) !== -1);
+  }
+  
+    
+  // fill carousel with posters
+  var posters = model.browseItems.map(function(movie) {
+    // TODO 
+    // return a list item with an img inside
+    var poster = $("<img></img>")
+      .attr("src", api.posterUrl(movie))
+      .attr("class", "img-responsive");
+    var listItem = $("<li></li>")
+      .addClass("item")
+      .append(poster);
+    return listItem;
   });
+  $("#section-browse ul").append(posters);
+  
+  // set poster as active
+  posters[model.activeMovieIndex].addClass("item active");
+
 }
 
 
