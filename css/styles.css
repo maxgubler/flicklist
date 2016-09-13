@@ -15,7 +15,7 @@ and then style them as shown in the example (padding, margin, background, etc)
 .item-watchlist {
 	display: inline-block;
 	margin: 10px 10px 0px 0px;
-	padding: 50px;
+	padding: 60px;
 	background-color: orange;
 	color: white;
 }
