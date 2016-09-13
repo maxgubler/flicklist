@@ -55,6 +55,9 @@ button, input[type="submit"] {
 	TODO 7
 	give these buttons some padding, and color them orange with white text
 	*/
+	color: white;
+	padding: 10px;
+	background-color: orange;
 }
 
 button:disabled {
