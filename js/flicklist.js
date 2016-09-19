@@ -4,15 +4,15 @@ var model = {
   watchlistItems: [],
   browseItems: [],
 
-  // TODO 
+  // DONE:
   // add a property for the current active movie index
   activeMovieIndex: 0
-}
+};
 
 
 var api = {
   root: "https://api.themoviedb.org/3",
-  token: "531ad003325e5f5b8f57abb3e9cc5c67", // TODO 0 add your api key
+  token: "531ad003325e5f5b8f57abb3e9cc5c67", // DONE: add your api key
   /**
    * Given a movie object, returns the url to its poster image
    */
@@ -20,7 +20,7 @@ var api = {
     var baseImageUrl = "http://image.tmdb.org/t/p/w300/";
     return baseImageUrl + movie.poster_path; 
   }
-}
+};
 
 
 
@@ -146,7 +146,7 @@ function render() {
     
   // fill carousel with posters
   var posters = model.browseItems.map(function(movie) {
-    // TODO 
+    // DONE:
     // return a list item with an img inside
     var poster = $("<img></img>")
       .attr("src", api.posterUrl(movie))
