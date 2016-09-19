@@ -157,8 +157,7 @@ function render() {
         model.watchlistItems.push(movie);
         render();
       })
-      .prop("disabled", model.watchlistItems.indexOf(movie) !== -1)
-      .attr("class", "btn btn-primary");
+      .prop("disabled", model.watchlistItems.indexOf(movie) !== -1);
 
     var itemView = $("<li></li>")
       .attr("class", "list-group-item")
