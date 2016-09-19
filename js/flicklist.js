@@ -14,7 +14,7 @@ var model = {
 
 var api = {
   root: "https://api.themoviedb.org/3",
-  token: "531ad003325e5f5b8f57abb3e9cc5c67" // TODO 0 add your api key
+  token: "531ad003325e5f5b8f57abb3e9cc5c67" // DONE: add your api key
 }
 
 
@@ -48,7 +48,7 @@ function discoverMovies(callback) {
 function searchMovies(searchTerm, callback) {
   console.log("searching for movies with '" + searchTerm + "' in their title...");
 
-  // TODO 9
+  // DONE:
   // implement this function as described in the comment above
   // you can use the body of discoverMovies as a jumping off point
   $.ajax({
@@ -79,7 +79,7 @@ function render() {
     var title = $("<p></p>").text(movie.original_title);
     var itemView = $("<li></li>")
       .append(title)
-      // TODO 3
+      // DONE:
       // give itemView a class attribute of "item-watchlist"
       .addClass('item-watchlist');
 
@@ -95,7 +95,7 @@ function render() {
         model.watchlistItems.push(movie);
         render();
       });
-      // TODO 2
+      // DONE:
       // the button should be disabled if this movie is already in
       // the user's watchlist
       // see jQuery .prop() and Array.indexOf()
@@ -104,7 +104,7 @@ function render() {
       }
 
 
-    // TODO 1
+    // DONE:
     // create a paragraph containing the movie object's .overview value
     // then, in the code block below,
     // append the paragraph in between the title and the button
