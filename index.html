@@ -27,10 +27,7 @@
   <section id="section-browse">
     <header>
       <h2>Browse Movies</h2>
-      <!-- 
-      TODO 6
-      add a <form> here for users to search for movies by title 
-      -->
+      <!-- DONE: add a <form> here for users to search for movies by title -->
       <form id="form-search">
         <input name="searchInput" type="text"></input>
         <input type="submit" value="Search By Title"></input>
@@ -44,7 +41,7 @@
   <script src="js/flicklist.js"></script>
 
   <script>
-    // TODO 8
+    // DONE:
     // fill in the missing pieces of the code below
 
     $("#form-search").submit(function(evt) {
@@ -55,7 +52,7 @@
       // figure out what the user typed
       var searchTerm = $("input[name='searchInput']").val();
 
-      // TODO 8c invoke the searchMovies function,
+      // DONE: invoke the searchMovies function,
       // passing in the search term, and render as the callback
       searchMovies(searchTerm, render);
     });

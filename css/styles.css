@@ -7,7 +7,7 @@ For CSS stuff, make good use of the Chrome Developer Tools:
 
 
 /*
-TODO 4
+DONE:
 add a selector for elements with class "item-watchlist"
 give these elements a display property of inline-block
 and then style them as shown in the example (padding, margin, background, etc)
@@ -22,7 +22,7 @@ and then style them as shown in the example (padding, margin, background, etc)
 
 
 /*
-TODO 5 
+DONE:
 Make all elements have color: gray; by default
 Hint: just apply the style using a parent selector, and then all 
 descendent elements will automatically inherit the same styles
@@ -62,7 +62,7 @@ ul {
 button, input[type="submit"] {
 	border-width: 0px;
 	/*
-	TODO 7
+	DONE:
 	give these buttons some padding, and color them orange with white text
 	*/
 	color: white;
