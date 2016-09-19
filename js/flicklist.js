@@ -8,7 +8,7 @@ var model = {
 
 var api = {
   root: "https://api.themoviedb.org/3",
-  token: "531ad003325e5f5b8f57abb3e9cc5c67", // TODO 0 add your api key
+  token: "531ad003325e5f5b8f57abb3e9cc5c67", // DONE: add your api key
   /**
    * Given a movie object, returns the url to its poster image
    */
@@ -26,11 +26,11 @@ var api = {
  * the callback function that was passed in
  */
 
-// TODO 1
+// DONE:
 // this function should accept a second argument, `keywords`
 function discoverMovies(callback, keywords) {
 
-  // TODO 2 
+  // DONE:
   // ask the API for movies related to the keywords that were passed in above
   // HINT: add another key/value pair to the `data` argument below
 
@@ -56,7 +56,7 @@ function discoverMovies(callback, keywords) {
  * the API's response.
  */
 function searchMovies(query, callback) {
-  // TODO 3
+  // DONE:
   // change the url so that we search for keywords, not movies
   $.ajax({
     url: api.root + "/search/keyword",
@@ -64,10 +64,10 @@ function searchMovies(query, callback) {
       api_key: api.token,
       query: query
     },
-  // TODO 4
+  // DONE:
   // when the response comes back, do all the tasks below:
   success: function(response) {
-  // TODO 4a
+  // DONE:
   // create a new variable called keywordIDs whose value is an array of all the
   // `.id` values of each of the objects inside reponse.results
   // HINT use the array map function to map over response.results
@@ -75,12 +75,12 @@ function searchMovies(query, callback) {
       return idObj.id;
     });
 
-  // TODO 4b
+  // DONE:
   // create a new variable called keywordsString by converting 
   // the array of ids to a comma-separated string, e.g.
   //      "192305,210090,210092,210093"
   // HINT: use the Array join function
-  // TODO 4c
+  // DONE:
   // instead of a comma-separated string, we want the ids
   // to be spearated with the pipe "|" character, eg:
   //     "192305|210090|210092|210093"
@@ -88,7 +88,7 @@ function searchMovies(query, callback) {
   var keywordsString = keywordIDs.join('|');
 
 
-  // TODO 4d
+  // DONE:
   // when the response comes back, call discoverMovies, 
   // passing along 2 arguments:
   // 1) the callback 
