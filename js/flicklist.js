@@ -9,13 +9,13 @@ var model = {
 var api = {
 
   root: "https://api.themoviedb.org/3",
-  token: "531ad003325e5f5b8f57abb3e9cc5c67", // TODO 0 add your api key
+  token: "531ad003325e5f5b8f57abb3e9cc5c67", // DONE: add your api key
 
   /**
    * Given a movie object, returns the url to its poster image
    */
   posterUrl: function(movie) {
-    // TODO 4b
+    // DONE:
     // implement this function
     var imageRoot = "http://image.tmdb.org/t/p/";
     return imageRoot + "w300/" + movie.poster_path;
@@ -77,11 +77,11 @@ function render() {
   model.watchlistItems.forEach(function(movie) {
     var title = $("<h6></h6>").text(movie.original_title);
 
-    // TODO 1 
+    // DONE:
     // add an "I watched it" button and append it below the title
     // Clicking should remove this movie from the watchlist and re-render
     var watchedBtn = $("<button></button>").text("I watched it")
-    // TODO 2i
+    // DONE:
     // apply the classes "btn btn-danger" to the "I watched it button"
     .attr("class", "btn btn-danger")
     .click(function(){
@@ -90,7 +90,7 @@ function render() {
       render();
     });
 
-    // TODO 4a
+    // DONE:
     // add a poster image and append it inside the 
     // panel body above the button
     var poster = $("<img></img>")
@@ -104,7 +104,7 @@ function render() {
     .append(poster)
     .append(watchedBtn);
 
-    // TODO 2g
+    // DONE:
     // re-implement the li as a bootstrap panel with a heading and a body
     var itemView = $("<li></li>")
       .append(panelHeading)
@@ -118,7 +118,7 @@ function render() {
   // insert browse items
   model.browseItems.forEach(function(movie) {
 
-    // TODO 2d continued
+    // DONE:
     // style this list item to look like the demo
     // You'll also need to make changes in index.html.
     // use the following BS classes:
